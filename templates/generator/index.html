@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Script Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8 text-center">AI Video Script Generator</h1>
+        
+        <div class="max-w-3xl mx-auto">
+            <!-- Input Form -->
+            <div class="bg-gray-800 rounded-lg p-6 mb-8">
+                <div class="mb-4">
+                    <textarea 
+                        id="promptInput"
+                        class="w-full h-32 px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your prompt here..."></textarea>
+                </div>
+                
+                <div class="flex flex-wrap gap-4 mb-4">
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="file" class="hidden" id="fileInput" multiple>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">
+                            📎 Upload Files
+                        </span>
+                    </label>
+                    
+                    <input 
+                        type="text" 
+                        id="linkInput"
+                        class="flex-1 px-4 py-2 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Paste a link...">
+                </div>
+                
+                <div class="flex justify-end">
+                    <button 
+                        id="generateBtn"
+                        class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        Generate Script
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Generated Script -->
+            <div id="scriptOutput" class="bg-gray-800 rounded-lg p-6 mb-8 hidden">
+                <h2 class="text-xl font-semibold mb-4">Generated Script</h2>
+                <div id="scriptContent" class="whitespace-pre-wrap"></div>
+            </div>
+            
+            <!-- Saved Scripts -->
+            <div class="bg-gray-800 rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Previously Generated Scripts</h2>
+                <div id="savedScripts" class="space-y-4"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/js/script.js"></script>
+</body>
+</html> 
